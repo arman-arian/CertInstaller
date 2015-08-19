@@ -7,6 +7,8 @@ namespace CertInstaller
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(@"Certificate Installer v1.0");
+
             var certificate = new X509Certificate2(Certificates.QTasCert, "12345");
             var rootStore = new X509Store(StoreName.Root, StoreLocation.LocalMachine);
             rootStore.Open(OpenFlags.ReadWrite);
@@ -18,7 +20,7 @@ namespace CertInstaller
             myStore.Add(certificate);
             myStore.Close();
 
-            Console.WriteLine("Certificate Installed.");
+            Console.WriteLine(@"Certificate Installed Successfuly");
             Console.ReadKey();
         }
     }
